@@ -1,0 +1,13 @@
+[package]
+name = "getpass"
+version = "0.0.1"
+authors = ["Brandon Sanderson <bas.bsanders@gmail.com>"]
+
+readme = "README.md"
+license = "MIT"
+repository = "https://github.com/brandonson/getpass-rs"
+
+[[bin]]
+name = "test_getpass"
+doc = false
+test = false
