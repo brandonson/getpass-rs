@@ -1,13 +1,14 @@
-#![feature(libc, std_misc, convert)]
+#![feature(libc, convert)]
 
 extern crate libc;
 
-use std::ffi::{AsOsStr, CStr};
+use std::ffi::{CStr, OsStr};
 use std::str;
 
 
 pub fn get_pass(prompt: &str) -> Option<String> {
-  prompt.as_os_str().to_cstring().map(
+  let os_str_ref:&OsStr = prompt.as_ref();
+  os_str_ref.to_cstring().map(
     |cstr| {
       unsafe {
         let pass = getpass(cstr.as_ptr());
